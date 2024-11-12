@@ -28964,7 +28964,7 @@ Webflow.require("ix2").init({
               id: "a-106-n",
               actionTypeId: "TRANSFORM_MOVE",
               config: {
-                delay: 1200,
+                delay: 4000,
                 easing: "ease",
                 duration: 800,
                 target: {
@@ -28981,7 +28981,7 @@ Webflow.require("ix2").init({
               id: "a-106-n-2",
               actionTypeId: "STYLE_OPACITY",
               config: {
-                delay: 1200,
+                delay: 4000,
                 easing: "ease",
                 duration: 400,
                 target: {
@@ -28996,7 +28996,7 @@ Webflow.require("ix2").init({
               id: "a-106-n-3",
               actionTypeId: "STYLE_OPACITY",
               config: {
-                delay: 1200,
+                delay: 4000,
                 easing: "easeOut",
                 duration: 400,
                 target: {
