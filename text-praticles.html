@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--  Last Published: Tue May 09 2023 13:51:58 GMT+0000 (Coordinated Universal Time)  -->
+<html
+  data-wf-page="64357e0972ffee1e51c2b876"
+  data-wf-site="636022c4862798e85d43e71e"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>SecuredFinanve v2</title>
+    <meta content="SecuredFinanve v2" property="og:title" />
+    <meta content="SecuredFinanve v2" property="twitter:title" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+    <script src="./js/text-particles.js"></script>
+    <link rel="stylesheet" href="css/text-particles.css" />
+  </head>
+
+  <body data-w-id="6351348a9becce665771eb98">
+    <script type="x-shader/x-vertex" id="vertexshader">
+
+      attribute float size;
+      attribute vec3 customColor;
+      varying vec3 vColor;
+
+      void main() {
+
+        vColor = customColor;
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+        gl_PointSize = size * ( 300.0 / -mvPosition.z );
+        gl_Position = projectionMatrix * mvPosition;
+
+      }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+
+      uniform vec3 color;
+      uniform sampler2D pointTexture;
+
+      varying vec3 vColor;
+
+      void main() {
+
+        gl_FragColor = vec4( color * vColor, 1.0 );
+        gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+
+      }
+    </script>
+
+    <div id="magic"></div>
+  </body>
+</html>

@@ -62,7 +62,7 @@ class Environment {
       1,
       10000
     );
-    this.camera.position.set(0, 0, 50);
+    this.camera.position.set(0, 0, 100);
   }
 
   createRenderer() {
@@ -70,7 +70,7 @@ class Environment {
     this.renderer = new THREE.WebGLRenderer({ alpha: true });
 
     // Set the clear color with alpha of 0 for transparency
-    this.renderer.setClearColor(0x000000, 0); // Transparent background (alpha = 0)
+    this.renderer.setClearColor(0x000000, 1); // Transparent background (alpha = 0)
 
     this.renderer.setSize(
       this.container.clientWidth,
@@ -201,7 +201,7 @@ class CreateParticles {
         let py = pos.getY(i);
         let pz = pos.getZ(i);
 
-        this.colorChange.setHSL(0.5, 1, 1);
+        this.colorChange.setHSL(1, 0, 1);
         coulors.setXYZ(
           i,
           this.colorChange.r,
@@ -226,7 +226,7 @@ class CreateParticles {
           px -= f * Math.cos(t);
           py -= f * Math.sin(t);
 
-          this.colorChange.setHSL(1 + zigzagTime, 1.0, 0.5);
+          this.colorChange.setHSL(1 + zigzagTime, 0, 0.9);
           coulors.setXYZ(
             i,
             this.colorChange.r,
