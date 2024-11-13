@@ -3307,14 +3307,6 @@ a {
   right: 0%;
 }
 
-.prelaoder__speaner {
-  width: 5em;
-  height: 5em;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
 .preloader__wrapper {
   justify-content: center;
   align-items: center;

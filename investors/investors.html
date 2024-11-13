@@ -11,11 +11,13 @@
     <meta content="SecuredFinanve v2" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
-    <script src="./js/text-particles.js"></script>
-    <link rel="stylesheet" href="css/text-particles.css" />
-    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="css/components.css" rel="stylesheet" type="text/css" />
-    <link href="css/secured-finance-old.css" rel="stylesheet" type="text/css" />
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="../css/components.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../css/secured-finance-old.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <style>
       @media (min-width: 992px) {
         html.w-mod-js:not(.w-mod-ix)
@@ -707,8 +709,12 @@
             (n.className += t + "touch");
       })(window, document);
     </script>
-    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
-    <link href="images/webclip.png" rel="apple-touch-icon" />
+    <link
+      href="../images/favicon.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link href="../images/webclip.png" rel="apple-touch-icon" />
     <style>
       body {
         -webkit-font-smoothing: antialiased;
@@ -765,38 +771,6 @@
   </head>
 
   <body data-w-id="6351348a9becce665771eb98">
-    <script type="x-shader/x-vertex" id="vertexshader">
-
-      attribute float size;
-      attribute vec3 customColor;
-      varying vec3 vColor;
-
-      void main() {
-
-        vColor = customColor;
-        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-        gl_PointSize = size * ( 300.0 / -mvPosition.z );
-        gl_Position = projectionMatrix * mvPosition;
-
-      }
-    </script>
-    <script type="x-shader/x-fragment" id="fragmentshader">
-
-      uniform vec3 color;
-      uniform sampler2D pointTexture;
-
-      varying vec3 vColor;
-
-      void main() {
-
-        gl_FragColor = vec4( color * vColor, 1.0 );
-        gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
-
-      }
-    </script>
-
-    <div id="magic"></div>
-
     <div>
       <div class="style w-embed">
         <style>
@@ -1136,636 +1110,437 @@
         </style>
       </div>
     </div>
-    <div class="preloader">
-      <div class="preloader__wrapper">
-        <div class="prelaoder__speaner w-embed">
-          <svg fill="none" viewbox="0 0 250 250" width="100%" height="100%">
-            <path
-              stroke="#fff"
-              stroke-width="8"
-              stroke-linecap="round"
-              d="M125 20c57.99 0 105 47.01 105 105s-47.01 105-105 105S20 182.99 20 125C20 67.023 66.988 20.022 124.96 20"
-              class="svg-elem-1"
-            ></path>
-          </svg>
-        </div>
-        <div class="preloader__logo w-embed">
-          <svg fill="none" viewbox="0 0 26 19">
-            <path
-              fill="#cafcc4"
-              d="M1 4.557A3.5 3.5 0 0 1 4.556 1a3.497 3.497 0 0 1 3.556 3.557 3.499 3.499 0 0 1-3.556 3.555A3.498 3.498 0 0 1 1 4.557Z"
-            ></path>
-            <path
-              fill="#fff"
-              stroke="#fff"
-              stroke-width=".2"
-              d="M13.867 16.96v.067l.064.025c.245.096.496.212.765.337 1.05.486 2.373 1.098 4.676 1.099 1.831 0 3.353-.493 4.419-1.385 1.067-.893 1.669-2.18 1.669-3.749 0-1.624-.664-2.679-1.666-3.453-.95-.735-2.207-1.219-3.476-1.707l-.175-.067c-1.395-.526-2.3-.966-2.856-1.45a2.152 2.152 0 0 1-.585-.769 2.331 2.331 0 0 1-.174-.944c0-.814.282-1.436.783-1.856.503-.421 1.238-.65 2.162-.65 1.249 0 2.257.352 3.019 1.042.763.692 1.288 1.735 1.552 3.135l.015.082h.693V2.282l-.074-.02c-.368-.098-.719-.205-1.067-.31-1.153-.352-2.282-.695-3.932-.695-1.77 0-3.19.494-4.17 1.342-.981.85-1.512 2.05-1.512 3.442 0 1.485.613 2.451 1.516 3.154.857.665 1.976 1.094 3.066 1.512l.15.058c1.247.477 2.26.891 2.963 1.438.695.54 1.084 1.207 1.084 2.2 0 .925-.338 1.641-.928 2.128-.592.488-1.448.754-2.498.754-1.325 0-2.37-.388-3.157-1.164-.789-.78-1.328-1.96-1.618-3.564l-.014-.082h-.694v4.484Z"
-            ></path>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div data-w-id="3e44fb49-913e-0dfc-bdf5-d04016628ca8" class="c-cursor">
-      <div
-        data-w-id="3fa35a7b-7cdf-732f-544a-7fa848a80cee"
-        class="c-cursor__snap"
-      >
-        <div
-          data-w-id="5ec410f5-f07d-d24a-05cd-4882ebb610f0"
-          class="c-cursor__wrapper"
-        >
-          <img
-            src="images/Polygon-2.svg"
-            loading="lazy"
-            alt=""
-            class="c-cursor__ico is-left"
-          />
-          <div class="c-cursor__text">drag</div>
-          <img
-            src="images/Polygon-1.svg"
-            loading="lazy"
-            alt=""
-            class="c-cursor__ico is-right"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="fixed-items">
-      <div class="container-menu__light">
-        <div class="link-logo">
-          <a href="#" class="link-logo__is1 w-inline-block">
-            <div class="link-logo__image w-embed">
-              <svg fill="none" viewbox="0 0 26 19">
-                <path
-                  fill="var(--logo-dot-color)"
-                  d="M1 4.557A3.5 3.5 0 0 1 4.556 1a3.497 3.497 0 0 1 3.556 3.557 3.499 3.499 0 0 1-3.556 3.555A3.498 3.498 0 0 1 1 4.557Z"
-                ></path>
-                <path
-                  fill="var(--logo-color)"
-                  stroke="var(--logo-color)"
-                  stroke-width=".2"
-                  d="M13.867 16.96v.067l.064.025c.245.096.496.212.765.337 1.05.486 2.373 1.098 4.676 1.099 1.831 0 3.353-.493 4.419-1.385 1.067-.893 1.669-2.18 1.669-3.749 0-1.624-.664-2.679-1.666-3.453-.95-.735-2.207-1.219-3.476-1.707l-.175-.067c-1.395-.526-2.3-.966-2.856-1.45a2.152 2.152 0 0 1-.585-.769 2.331 2.331 0 0 1-.174-.944c0-.814.282-1.436.783-1.856.503-.421 1.238-.65 2.162-.65 1.249 0 2.257.352 3.019 1.042.763.692 1.288 1.735 1.552 3.135l.015.082h.693V2.282l-.074-.02c-.368-.098-.719-.205-1.067-.31-1.153-.352-2.282-.695-3.932-.695-1.77 0-3.19.494-4.17 1.342-.981.85-1.512 2.05-1.512 3.442 0 1.485.613 2.451 1.516 3.154.857.665 1.976 1.094 3.066 1.512l.15.058c1.247.477 2.26.891 2.963 1.438.695.54 1.084 1.207 1.084 2.2 0 .925-.338 1.641-.928 2.128-.592.488-1.448.754-2.498.754-1.325 0-2.37-.388-3.157-1.164-.789-.78-1.328-1.96-1.618-3.564l-.014-.082h-.694v4.484Z"
-                ></path>
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="menu-items">
-          <a href="#intro" class="menu-item nav-1 w-inline-block">
-            <div class="menu-text">Intro</div>
-          </a>
-          <a href="#platform" class="menu-item nav-2 w-inline-block">
-            <div class="menu-text">Platform</div>
-          </a>
-          <a href="#about" class="menu-item nav-3 w-inline-block">
-            <div class="menu-text">About</div>
-          </a>
-          <a href="#investors" class="menu-item nav-4 w-inline-block">
-            <div class="menu-text">Investors</div>
-          </a>
-          <a href="#news" class="menu-item nav-5 w-inline-block">
-            <div class="menu-text">News</div>
-          </a>
-          <a href="#" class="menu-button to-footer w-inline-block">
-            <div class="menu-text-non-hover">Sign up</div>
-            <div
-              data-w-id="8312a1a5-dae7-16a1-8cec-e79ee9e966df"
-              style="
-                -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                  rotateY(0) rotateZ(0) skew(0, 0);
-                -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                  rotateY(0) rotateZ(0) skew(0, 0);
-                transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                  rotateY(0) rotateZ(0) skew(0, 0);
-              "
-              class="menu-button__bg"
-            ></div>
-          </a>
-        </div>
-      </div>
-      <div no-click="" class="container-menu__light-is-back">
-        <div class="link-logo">
-          <div class="link-logo__is2">
-            <img
-              src="images/secured.svg"
-              loading="lazy"
-              alt=""
-              class="link-logo__image"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        style="
-          opacity: 1;
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-            rotateY(0) rotateZ(0) skew(0, 0);
-          -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-            rotateY(0) rotateZ(0) skew(0, 0);
-          -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-            rotateY(0) rotateZ(0) skew(0, 0);
-          transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0)
-            rotateZ(0) skew(0, 0);
-        "
-        class="bt-video"
-      >
-        <a
-          data-w-id="ac0bb96c-bfad-8e8c-2867-bddf34b7315b"
-          href="https://youtu.be/cFEyuG6Q3og"
-          target="_blank"
-          class="bt-video__wrapper w-inline-block"
-        >
-          <div
-            data-w-id="181c0878-0e5c-bb24-d98e-b9028a1ae5b0"
-            style="
-              color: rgb(81, 98, 255);
-              background-color: rgb(255, 255, 255);
-              opacity: 1;
-            "
-            class="bt-video__bt"
-          >
-            <div class="html-embed-2 w-embed">
-              <svg
-                width="100%"
-                height="100%"
-                viewbox="0 0 9 12"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 11.25V0L8.65385 5.625L0 11.25Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div
-            style="
-              -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-              -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                rotateY(0) rotateZ(0) skew(0, 0);
-              -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                rotateY(0) rotateZ(0) skew(0, 0);
-              transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                rotateY(0) rotateZ(0) skew(0, 0);
-            "
-            class="bt-video__container"
-          >
-            <div
-              data-w-id="1fc59aad-fbca-f7c1-170b-17193e350b37"
-              class="bt-video__img-container"
-            >
-              <img
-                src="images/Rectangle-3937.webp"
-                loading="eager"
-                style="
-                  -webkit-transform: translate3d(0, 0, 0) scale3d(1.3, 1.3, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -moz-transform: translate3d(0, 0, 0) scale3d(1.3, 1.3, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -ms-transform: translate3d(0, 0, 0) scale3d(1.3, 1.3, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  transform: translate3d(0, 0, 0) scale3d(1.3, 1.3, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                "
-                alt=""
-                class="bt-video__img"
-              />
-            </div>
-          </div>
-        </a>
-      </div>
-      <div
-        data-w-id="7f96e916-c5c0-f2e1-200b-a96fac32cef1"
-        class="m-close-menu"
-      >
-        <img
-          src="images/Frame-137919.png"
-          loading="lazy"
-          alt=""
-          class="m-close-menu__logo"
-        />
-        <div
-          data-w-id="70ad9961-268a-561b-24d4-94a7ae81636c"
-          class="m-close-menu__bt"
-        >
-          <div class="m-close-menu__bt-wrapper">
-            <div
-              data-w-id="e10a0ef2-9db7-c0a9-1b69-4adbc3b1416e"
-              class="m-close-menu__line-1"
-            ></div>
-          </div>
-          <div class="m-close-menu__bt-wrapper">
-            <div
-              data-w-id="f8ed2bb2-3fff-1e06-7be5-c8110d27490a"
-              class="m-close-menu__line-2"
-            ></div>
-          </div>
-        </div>
-      </div>
-      <div data-w-id="3ecd4d3b-5f05-bf52-e1ba-1fc699acc23f" class="m-open-menu">
-        <a href="#intro" class="m-open-menu__link nav-1 w-inline-block">
-          <div class="menu-text">Intro</div>
-        </a>
-        <a href="#platform" class="m-open-menu__link nav-2 w-inline-block">
-          <div class="menu-text">Platform</div>
-        </a>
-        <a href="#about" class="m-open-menu__link nav-3 w-inline-block">
-          <div class="menu-text">About us</div>
-        </a>
-        <a href="#investors" class="m-open-menu__link nav-4 w-inline-block">
-          <div class="menu-text">Investors</div>
-        </a>
-        <a href="#news" class="m-open-menu__link nav-5 w-inline-block">
-          <div class="menu-text">News</div>
-        </a>
-        <div class="m-open-menu__button-container">
-          <a
-            href="#"
-            data-w-id="418bead1-2a16-fae5-81f3-d14489478f36"
-            class="m-open-menu__button to-footer w-inline-block"
-          >
-            <div class="button-text-t black">Contact us</div>
-            <img
-              src="images/Vector-18.svg"
-              loading="lazy"
-              alt=""
-              class="m-open-menu__ic"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
     <div class="main-wrapper">
-      <div id="intro" class="intro">
-        <div class="scroll-animations">
-          <div class="hero-slide">
-            <div class="hero-slide__head">
-              <div class="hero-slide__head-is3 perspective"></div>
-            </div>
-            <div style="opacity: 1" class="hero-slide__bt-container">
-              <a
-                href="#"
-                class="button-container mob-hide nav-1 w-inline-block explore-btn"
+      <div class="pointer-wrapper">
+        <div
+          data-w-id="29e1fbe2-d5e7-4eba-667d-9dc3534c6a34"
+          class="wrapper-s0"
+        >
+          <div class="_5s-wrapper">
+            <div class="dark-menu-wrapper">
+              <div
+                data-w-id="39680133-aa6e-3c28-a19a-1cea8a3a3729"
+                class="_6s-wrapper"
               >
                 <div
-                  data-w-id="dbf30812-dd30-beaf-32a4-f096eee5f5e7"
-                  class="hero__bt-container"
+                  data-w-id="b8f53a3a-69bf-b115-f91f-29b613cb7046"
+                  class="wrapper-s1"
                 >
                   <div
-                    data-w-id="8995ea1c-a38e-c732-729b-3eef13438bf5"
-                    class="button-text"
+                    data-w-id="70527781-5b61-d591-b822-f39991ce0dac"
+                    class="_7s-8s__wrapper"
                   >
-                    Explore
-                  </div>
-                  <div class="bt-ic w-embed">
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewbox="0 0 12 12"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill="currentColor"
-                        clip-rule="evenodd"
-                        d="M5.00398 7.58579V0H7.00398V7.58579L10.2969 4.29289L11.7111 5.70711L6.00398 11.4142L0.296875 5.70711L1.71109 4.29289L5.00398 7.58579Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  data-w-id="e9a05728-4d9b-85d2-143d-14aee99ffcff"
-                  class="menu-button__bg transparent is1"
-                ></div>
-              </a>
-              <a
-                href="#"
-                class="button-green-container margin-left mob to-footer w-inline-block"
-              >
-                <div class="bt-wrapper-text">
-                  <div
-                    data-w-id="8995ea1c-a38e-c732-729b-3eef13438bf9"
-                    class="button-text"
-                  >
-                    Sign up
-                  </div>
-                </div>
-                <div
-                  data-w-id="65a9b9da-f8a1-0ae8-1b80-53ce3acd00a9"
-                  class="menu-button__bg is2"
-                ></div>
-              </a>
-            </div>
-            <div
-              data-w-id="9785e6ca-a1df-1993-03dd-7d11ee2ddcb2"
-              class="hero-slide__link-container"
-            >
-              <div style="opacity: 1" class="hero-slide__links-container">
-                <a href="#" class="hero-slide__link w-inline-block">
-                  <div class="body-caps">Read documentation</div>
-                </a>
-                <div class="share">
-                  <div id="sharebtn" class="hero-slide__link">
-                    <div class="body-caps">Share</div>
-                  </div>
-                  <div class="share__list">
-                    <a
-                      fs-socialshare-element="facebook"
-                      href="#"
-                      class="share__link w-inline-block"
-                    >
-                      <div class="share__ico w-embed">
-                        <svg
-                          width="100%"
-                          height="100%"
-                          fill="none"
-                          viewbox="0 0 34 34"
-                        >
-                          <path
-                            fill="#5163FF"
-                            d="M18.404 23.761V17.57h2.079l.31-2.413h-2.389v-1.541c0-.699.194-1.175 1.196-1.175h1.278V10.28a17.13 17.13 0 0 0-1.862-.095c-1.843 0-3.104 1.125-3.104 3.19v1.78h-2.084v2.413h2.084v6.192h2.492Z"
-                          ></path>
-                        </svg>
-                      </div>
-                    </a>
-                    <a
-                      fs-socialshare-element="twitter"
-                      href="#"
-                      class="share__link w-inline-block"
-                    >
-                      <div class="share__ico w-embed">
-                        <svg
-                          width="100%"
-                          height="100%"
-                          fill="none"
-                          viewbox="0 0 34 34"
-                        >
-                          <path
-                            fill="#5468FA"
-                            fill-rule="evenodd"
-                            d="M15.16 21.98c4.7-.117 7.267-4.027 7.267-7.425a7.57 7.57 0 0 0-.008-.338c.514-.368.96-.828 1.313-1.351a5.29 5.29 0 0 1-1.51.41c.542-.323.96-.834 1.156-1.444-.509.3-1.072.517-1.67.634a2.637 2.637 0 0 0-1.92-.825 2.62 2.62 0 0 0-2.563 3.206 7.486 7.486 0 0 1-5.421-2.728 2.605 2.605 0 0 0 .814 3.485 2.635 2.635 0 0 1-1.192-.326v.033c0 1.265.907 2.32 2.11 2.56a2.656 2.656 0 0 1-1.188.045 2.63 2.63 0 0 0 2.457 1.813 5.304 5.304 0 0 1-3.89 1.08v.002a7.484 7.484 0 0 0 3.874 1.169h.371Z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                      </div>
-                    </a>
-                    <a
-                      fs-socialshare-element="linkedin"
-                      href="#"
-                      class="share__link w-inline-block"
-                    >
-                      <div class="share__ico w-embed">
-                        <svg
-                          width="100%"
-                          height="100%"
-                          fill="none"
-                          viewbox="0 0 34 34"
-                        >
-                          <path
-                            fill="#5367FC"
-                            d="M13.598 21.363h-2.48v-7.952h2.48v7.952Zm-1.244-9.044a1.43 1.43 0 1 1 0-2.86c.79 0 1.44.638 1.44 1.434 0 .796-.642 1.426-1.44 1.426Zm10.533 9.044h-2.48v-3.87c0-.925-.019-2.11-1.291-2.11-1.292 0-1.487 1.01-1.487 2.046v3.934h-2.48v-7.952h2.378v1.083h.037c.335-.63 1.143-1.286 2.35-1.286 2.508 0 2.973 1.647 2.973 3.786v4.37Z"
-                          ></path>
-                        </svg>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-w-id="37d13c98-9f01-0610-030e-fefc97e35e90"
-              class="hero-slide__oval-container"
-            >
-              <img
-                src="images/arc-mask.png"
-                loading="lazy"
-                height="5494"
-                width="2880"
-                alt=""
-                class="hero-slide__oval-img"
-              />
-              <div class="hero-slide__fill-side-1"></div>
-              <div class="hero-slide__fill-side-2"></div>
-            </div>
-            <div class="menu-animation-dummy"></div>
-          </div>
-          <div class="scroll-anim__video-wrapper">
-            <div
-              id="child-iframe"
-              class="scroll-anim__2s-video w-embed w-iframe"
-            >
-              <!-- iframe src="https://player.vimeo.com/video/765398725?h=5d6f3bfd3f&amp;badge=0&amp;background=1"
-    width="100%" height="100%" frameborder="0" webkitallowfullscreen
-    mozallowfullscreen allowfullscreen></iframe -->
-              <!-- iframe id="iframe-vercel" src="https://dots-sf.vercel.app"
-    width="100%" height="100%" frameborder="0" webkitallowfullscreen
-    mozallowfullscreen allowfullscreen></iframe -->
-            </div>
-          </div>
-          <div
-            data-w-id="9ba60a25-a01d-fe95-dca5-f459e87e9d18"
-            class="hero-slide__fill-bg"
-          ></div>
-        </div>
-        <div class="scroll-wrapper">
-          <div class="header"></div>
-          <div
-            data-w-id="3dea77b0-e23b-aaa2-cac3-98bd744e3dea"
-            class="anim-area-100vh"
-          ></div>
-          <div id="intro-anim" class="intro">
-            <div
-              data-w-id="84478833-fd79-2bd1-f607-afa7afff23ca"
-              class="hero-quote"
-            >
-              <div class="hero-quote__text-block">
-                <h2 class="h3-large is-quote">
-                  <span class="hero-quote__span is1 perspective"
-                    >Interbank-grade Capital Markets</span
-                  >
-                  <span class="hero-quote__span is2 perspective"
-                    >Protocol. Building a trillion dollar-</span
-                  ><span class="hero-quote__span is3 perspective"
-                    >scale transaction platform that’s</span
-                  >
-                  <span class="hero-quote__span is4 perspective"
-                    >open to everyone, connecting</span
-                  >
-                  <span class="hero-quote__span is5 perspective"
-                    >groundbreaking technologies with</span
-                  >
-                  <span class="hero-quote__span is6 perspective"
-                    >battle-tested interbanking standards.</span
-                  >
-                </h2>
-              </div>
-            </div>
-            <div data-color="transparent" class="frame-container">
-              <div
-                data-w-id="84478833-fd79-2bd1-f607-afa7afff23da"
-                class="_1-slide _2s-card--anim"
-              >
-                <div class="scroll-anim__1s-text-container">
-                  <div class="scroll-anim__1s-heading">
-                    <div class="scroll-anim__1s-h-container-1 anim-h-is1">
-                      <h2 class="h2 light">New</h2>
-                      <div class="scroll-anim__1s-h-img"></div>
-                      <h2 class="h2 light">era</h2>
-                    </div>
-                    <div class="scroll-anim__1s-h-container-2 anim-h-is2">
-                      <h2 class="h2 light">of investing</h2>
-                    </div>
-                    <div class="scroll-anim__1s-description anim-desc">
-                      <div class="body-text-l light">
-                        We are on the verge of a new era for investing: where
-                        the market scales from billions to trillions, with
-                        unprecedented opportunities available to all.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-w-id="84478833-fd79-2bd1-f607-afa7afff23e9"
-                class="_2-slide _2s-card--anim"
-              >
-                <div class="scroll-anim__2s-text-container">
-                  <div class="scroll-anim__2s-heading perspective">
-                    <div class="scroll-anim__2s-h-container-1 anim-h-is1">
-                      <div class="scroll-anim__2s-h-img"></div>
-                      <h2 class="h2 light">Realiable</h2>
-                    </div>
-                    <div class="scroll-anim__2s-h-container-2 anim-h-is2">
-                      <h2 class="h2 light">yield curve</h2>
-                    </div>
-                  </div>
-                  <div class="scroll-anim__2s-description anim-desc">
-                    <div class="body-text-l light">
-                      Long-term exchanges, efficient collateral management and
-                      hedging cannot happen without a standard interest rate,
-                      based on a reliable yield curve
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-w-id="84478833-fd79-2bd1-f607-afa7afff23f6"
-                class="_3-slide _2s-card--anim"
-              >
-                <div class="scroll-anim__3s-text-container">
-                  <div class="scroll-anim__3s-heading perspective">
-                    <div class="scroll-anim__3s-h-container-1 anim-h-is1">
-                      <h2 class="h2 light">Building</h2>
-                      <div class="scroll-anim__3s-h-img"></div>
-                    </div>
-                    <div class="scroll-anim__3s-h-container-2 anim-h-is2">
-                      <h2 class="h2 light">the future</h2>
-                    </div>
-                    <div class="scroll-anim__3s-description anim-desc">
-                      <div class="body-text-l light">
-                        At Secured Finance, we connect ground-breaking DeFi
-                        technologies with battle-tested interbanking standards.
-                        Building a responsive, elegant infrastructure that takes
-                        you to the future.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-w-id="84478833-fd79-2bd1-f607-afa7afff2405"
-                class="_4-slide"
-              >
-                <div class="scroll-anim__4s-text-container">
-                  <div class="scroll-anim__4s-ftrs-item">
                     <div
-                      data-w-id="84478833-fd79-2bd1-f607-afa7afff2408"
-                      class="scroll-anim__4s-ftrs-img-container"
+                      data-w-id="75dedc3f-aeae-4d63-b6ee-34fcb847da21"
+                      class="wrapper-s2"
                     >
-                      <div class="scroll-anim__4s-ftrs-img-1">
-                        <div class="scroll-anim__4s-ftrs-circle-1-1"></div>
-                        <div class="scroll-anim__4s-ftrs-circle-1-2"></div>
-                      </div>
-                    </div>
-                    <div
-                      data-w-id="84478833-fd79-2bd1-f607-afa7afff240c"
-                      class="scroll-anim__4s-ftrs-text"
-                    >
-                      <h4 class="h3 light">Real yield<br /></h4>
-                      <h4 class="h3 light">Curve</h4>
-                      <div
-                        class="body-text gray top-margin-30px mob-centre text-white"
-                      >
-                        Interest rates negotiation, counterparty finding,
-                        collateral management made easy. Ensuring no-arbitrage
-                        pricing via open orderbook.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="scroll-anim__4s-ftrs-item">
-                    <div
-                      data-w-id="84478833-fd79-2bd1-f607-afa7afff2415"
-                      class="scroll-anim__4s-ftrs-img-container"
-                    >
-                      <div class="scroll-anim__4s-ftrs-img-2">
-                        <div class="scroll-anim__4s-ftrs-circle-2-1"></div>
-                        <div class="scroll-anim__4s-ftrs-circle-wrapper-2-2">
-                          <div class="scroll-anim__4s-ftrs-circle-2-2"></div>
+                      <div class="_7s">
+                        <div class="_7s-header">
+                          <h2 class="h1 align-left">Our</h2>
+                          <h2 class="h1 align-left italic mob-margin-left">
+                            Investors
+                          </h2>
+                        </div>
+                        <div class="_7s-ovals">
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-3.png"
+                              loading="lazy"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-3-p-500.png 500w,
+                                ../images/Component-3.png       602w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-7.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac2557-51c2b876"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-7-p-500.png 500w,
+                                ../images/Component-7.png       602w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-4.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac2559-51c2b876"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-4-p-500.png 500w,
+                                ../images/Component-4.png       602w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-6.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac255b-51c2b876"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-6-p-500.png 500w,
+                                ../images/Component-6.png       602w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-5.png"
+                              loading="lazy"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-5-p-500.png 500w,
+                                ../images/Component-5.png       602w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-8.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac255f-51c2b876"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-8-p-500.png 500w,
+                                ../images/Component-8.png       603w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-9.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac2561-51c2b876"
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-10.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac2563-51c2b876"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-10-p-500.png 500w,
+                                ../images/Component-10.png       602w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-11.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac2565-51c2b876"
+                              sizes="(max-width: 479px) 100vw, 12vw"
+                              srcset="
+                                ../images/Component-11-p-500.png 500w,
+                                ../images/Component-11.png       602w
+                              "
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                          <div class="_7s-oval">
+                            <img
+                              src="../images/Component-12.png"
+                              loading="lazy"
+                              id="w-node-dd3de6e2-145e-fd1f-26f4-8dd7f0ac2567-51c2b876"
+                              alt=""
+                              class="_7s-logo"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-w-id="dd3de6e2-145e-fd1f-26f4-8dd7f0ac256c"
+                          class="_7s-investors-people"
+                        >
+                          <div class="_7s-hor-animate-1">
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/1.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Vinny Lungham</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/2.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Rich Rosenblum</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/3.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Justin Kan</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/4.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Juan Benet</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/5.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Tikhon Bernstam</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/6.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">James DeNaut</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/7.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Tom Trowbridge</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/8.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Richard Ma</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/9.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Scott Keto</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/10.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Koki Uchlyama</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_7s-hor-animate-2">
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/1.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Vinny Lungham</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/2.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Rich rosenblum</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/3.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Justin Kan</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/4.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Juan Benet</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/5.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Tikhon Bernstam</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/6.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">James DeNaut</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/7.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Tom Trowbridge</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/8.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Richard Ma</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/9.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Scott Keto</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                            <div class="_7s-investor-container">
+                              <img
+                                src="../images/10.png"
+                                loading="lazy"
+                                alt=""
+                                class="_7s-investor-img"
+                              />
+                              <div class="_7s-investor-text-container">
+                                <div class="h3">Koki Uchlyama</div>
+                                <div class="h5 gray">Ceo</div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div
-                      data-w-id="84478833-fd79-2bd1-f607-afa7afff241a"
-                      class="scroll-anim__4s-ftrs-text"
-                    >
-                      <h4 class="h3 light">Composability</h4>
-                      <h4 class="h3 light">&amp; Scalability</h4>
-                      <div
-                        class="body-text gray top-margin-30px mob-centre text-white"
-                      >
-                        Yield curve as one market to enable interpolating and
-                        composing interest rates. Netting enables reduced
-                        collateral and leverage on derivatives.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="scroll-anim__4s-ftrs-item">
-                    <div
-                      data-w-id="84478833-fd79-2bd1-f607-afa7afff2422"
-                      class="scroll-anim__4s-ftrs-img-container"
-                    >
-                      <div class="scroll-anim__4s-ftrs-img-3">
-                        <div class="scroll-anim__4s-ftrs-circle-3-1"></div>
-                        <div class="scroll-anim__4s-ftrs-circle-3-2"></div>
-                      </div>
-                    </div>
-                    <div
-                      data-w-id="84478833-fd79-2bd1-f607-afa7afff2426"
-                      class="scroll-anim__4s-ftrs-text"
-                    >
-                      <h4 class="h3 light">Forward</h4>
-                      <h4 class="h3 light">Loan &amp; NDFs</h4>
-                      <div
-                        class="body-text gray top-margin-30px mob-centre text-white"
-                      >
-                        Composing forward loan to manage future cash-flow. NDFs
-                        allow manageing cross-currency without suffeeing cross
-                        chain risks.
-                      </div>
-                    </div>
+                    <div id="investors" class="_7s-anchor"></div>
                   </div>
                 </div>
+                <div id="about" class="_6s-anchor"></div>
+                <div id="about" data-color="blue" class="color-trigger"></div>
               </div>
-              <div
-                data-w-id="085dbf5a-0c44-9d23-ab94-4d8be1a0920f"
-                class="trigger-frame-animate"
-              ></div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="trigger-wrapper">
+        <div
+          data-w-id="a0a19611-fad6-0650-6e84-d5b36d992f45"
+          class="trigger-video-bt"
+        ></div>
+        <div
+          data-w-id="ccd16ebb-786d-7a66-d8ec-a240a7a20ba4"
+          class="trigger-video"
+        ></div>
       </div>
     </div>
     <script
@@ -1774,7 +1549,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script src="js/secured-finance-old.js" type="text/javascript"></script>
+    <script src="../js/secured-finance-old.js" type="text/javascript"></script>
     <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
@@ -1957,7 +1732,7 @@
       //   let img = imgFeed[i]
       //   let srcImg = imgCollection[i].getAttribute('src')
       //   if (img === undefined) {
-      //     console.log('no more images')
+      //     console.log('no more ../images')
       //   } else {
       //     img.setAttribute('src', srcImg)
       //   }
